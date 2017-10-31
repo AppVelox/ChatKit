@@ -8,6 +8,7 @@
         android:id="@id/attachmentButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft = "16dp"
         android:layout_centerVertical="true"/>
 
     <android.support.v4.widget.Space
@@ -24,8 +25,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginBottom = "15dp"
-        android:layout_gravity = "bottom"
         android:layout_toEndOf="@id/attachmentButtonSpace"
         android:layout_toLeftOf="@id/sendButtonSpace"
         android:layout_toRightOf="@id/attachmentButtonSpace"
@@ -43,7 +42,7 @@
         android:id="@id/messageSendButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom = "15dp"
+        android:layout_marginLeft = "16dp"
         android:layout_gravity = "bottom"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
