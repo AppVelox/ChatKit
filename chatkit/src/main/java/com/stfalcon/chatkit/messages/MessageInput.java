@@ -170,6 +170,10 @@ public class MessageInput extends RelativeLayout
         this.messageSendButton.setImageDrawable(style.getInputButtonIcon());
 
         ViewCompat.setBackground(messageSendButton, style.getInputButtonBackground());
+        messageInput.setPadding(0,
+                context.getResources().getDimensionPixelSize(R.dimen.dpminus5),
+                0,
+                context.getResources().getDimensionPixelSize(R.dimen.dpminus5));
 
     }
 
