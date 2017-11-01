@@ -45,7 +45,6 @@ public class MessageInput extends RelativeLayout
     protected EditText messageInput;
     protected ImageButton messageSendButton;
     protected ImageButton attachmentButton;
-    protected Space sendButtonSpace, attachmentButtonSpace;
 
     private CharSequence input;
     private InputListener inputListener;
@@ -165,18 +164,13 @@ public class MessageInput extends RelativeLayout
 
         this.attachmentButton.setVisibility(style.showAttachmentButton() ? VISIBLE : GONE);
         this.attachmentButton.setImageDrawable(style.getAttachmentButtonIcon());
-        this.attachmentButton.getLayoutParams().width = style.getAttachmentButtonWidth();
-        this.attachmentButton.getLayoutParams().height = style.getAttachmentButtonHeight();
         ViewCompat.setBackground(this.attachmentButton, style.getAttachmentButtonBackground());
 
-        this.attachmentButtonSpace.setVisibility(style.showAttachmentButton() ? VISIBLE : GONE);
-        this.attachmentButtonSpace.getLayoutParams().width = style.getAttachmentButtonMargin();
 
         this.messageSendButton.setImageDrawable(style.getInputButtonIcon());
-        this.messageSendButton.getLayoutParams().width = style.getInputButtonWidth();
-        this.messageSendButton.getLayoutParams().height = style.getInputButtonHeight();
+
         ViewCompat.setBackground(messageSendButton, style.getInputButtonBackground());
-        this.sendButtonSpace.getLayoutParams().width = style.getInputButtonMargin();
+
     }
 
     private void init(Context context) {
@@ -185,8 +179,6 @@ public class MessageInput extends RelativeLayout
         messageInput = (EditText) findViewById(R.id.messageInput);
         messageSendButton = (ImageButton) findViewById(R.id.messageSendButton);
         attachmentButton = (ImageButton) findViewById(R.id.attachmentButton);
-        sendButtonSpace = (Space) findViewById(R.id.sendButtonSpace);
-        attachmentButtonSpace = (Space) findViewById(R.id.attachmentButtonSpace);
 
         messageSendButton.setOnClickListener(this);
         attachmentButton.setOnClickListener(this);

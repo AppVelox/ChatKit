@@ -1,49 +1,38 @@
-<merge
+<android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_height="wrap_content">
 
     <ImageButton
         android:id="@id/attachmentButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft = "16dp"
-        android:layout_centerVertical="true"/>
-
-    <android.support.v4.widget.Space
-        android:id="@id/attachmentButtonSpace"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_toEndOf="@id/attachmentButton"
-        android:layout_toRightOf="@id/attachmentButton"/>
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@id/messageInput"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_toEndOf="@id/attachmentButtonSpace"
-        android:layout_toLeftOf="@id/sendButtonSpace"
-        android:layout_toRightOf="@id/attachmentButtonSpace"
-        android:layout_toStartOf="@id/sendButtonSpace"
-        android:inputType="textAutoCorrect|textAutoComplete|textMultiLine|textCapSentences"/>
-
-    <android.support.v4.widget.Space
-        android:id="@id/sendButtonSpace"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_toLeftOf="@id/messageSendButton"
-        android:layout_toStartOf="@id/messageSendButton"/>
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:inputType="textAutoCorrect|textAutoComplete|textMultiLine|textCapSentences"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/messageSendButton"
+        app:layout_constraintStart_toEndOf="@+id/attachmentButton"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@id/messageSendButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft = "16dp"
-        android:layout_gravity = "bottom"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"/>
+        android:layout_width="45dp"
+        android:layout_height="20dp"
+        android:layout_marginRight="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</merge>
+</android.support.constraint.ConstraintLayout>
