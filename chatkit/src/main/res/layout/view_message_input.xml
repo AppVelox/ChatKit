@@ -33,7 +33,7 @@
     <ImageButton
         android:id="@id/messageSendButton"
         android:layout_width="48dp"
-        android:layout_height="24dp"
+        android:layout_height="32dp"
         android:layout_marginBottom="16dp"
         android:layout_marginRight="24dp"
         android:layout_marginTop="16dp"
