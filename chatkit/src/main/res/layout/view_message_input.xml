@@ -22,7 +22,7 @@
         android:layout_centerVertical="true"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:includeFontPadding="false"
+        android:background="@null"
         android:inputType="textAutoCorrect|textAutoComplete|textMultiLine|textCapSentences"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/messageSendButton"
