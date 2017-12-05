@@ -69,6 +69,8 @@ public class MessagesListAdapter<MESSAGE extends IMessage>
     private DateFormatter.Formatter dateHeadersFormatter;
     private SparseArray<OnMessageViewClickListener> viewClickListenersArray = new SparseArray<>();
 
+    private boolean scroll = true;
+
     /**
      * For default list item layout and view holder.
      *
@@ -103,6 +105,13 @@ public class MessagesListAdapter<MESSAGE extends IMessage>
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Wrapper wrapper = items.get(position);
+
+        if (position == 0) {
+            scroll = true;
+        } else {
+            scroll = false;
+        }
+
         holders.bind(holder, wrapper.item, wrapper.isSelected, imageLoader,
                 getMessageClickListener(wrapper),
                 getMessageLongClickListener(wrapper),
@@ -135,9 +144,8 @@ public class MessagesListAdapter<MESSAGE extends IMessage>
      * Adds message to bottom of list and scroll if needed.
      *
      * @param message message to add.
-     * @param scroll  {@code true} if need to scroll list to bottom when message added.
      */
-    public void addToStart(MESSAGE message, boolean scroll) {
+    public void addToStart(MESSAGE message) {
         boolean isNewMessageToday = !isPreviousSameDate(0, message.getCreatedAt());
         if (isNewMessageToday) {
             items.add(0, new Wrapper<>(message.getCreatedAt()));
