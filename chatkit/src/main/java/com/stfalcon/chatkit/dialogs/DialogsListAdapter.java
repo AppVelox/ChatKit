@@ -575,6 +575,13 @@ public class DialogsListAdapter<DIALOG extends IDialog>
         public void onBind(final DIALOG dialog) {
             if (dialog.getUnreadCount() > 0) {
                 applyUnreadStyle();
+
+                if (dialog.getUnreadCount() > 99) {
+                    tvBubble.setBackgroundResource(R.drawable.bubble_circle_big);
+                    GradientDrawable bgShape = (GradientDrawable) tvBubble.getBackground();
+                    bgShape.setColor(dialogStyle.getDialogUnreadBubbleBackgroundColor());
+                }
+
             } else {
                 applyDefaultStyle();
             }

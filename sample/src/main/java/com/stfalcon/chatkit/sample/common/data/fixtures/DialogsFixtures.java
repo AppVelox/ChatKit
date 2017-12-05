@@ -27,6 +27,8 @@ public final class DialogsFixtures extends FixturesData {
             chats.add(getDialog(i, calendar.getTime()));
         }
 
+        chats.get(3).setUnreadCount(140);
+
         return chats;
     }
 
