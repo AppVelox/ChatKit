@@ -39,14 +39,14 @@ public class DefaultMessagesActivity extends DemoMessagesActivity
     @Override
     public boolean onSubmit(CharSequence input) {
         super.messagesAdapter.addToStart(
-                MessagesFixtures.getTextMessage(input.toString()), true);
+                MessagesFixtures.getTextMessage(input.toString()));
         return true;
     }
 
     @Override
     public void onAddAttachments() {
         super.messagesAdapter.addToStart(
-                MessagesFixtures.getImageMessage(), true);
+                MessagesFixtures.getImageMessage());
     }
 
     private void initAdapter() {

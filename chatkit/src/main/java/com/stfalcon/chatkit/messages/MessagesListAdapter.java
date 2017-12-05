@@ -23,6 +23,7 @@ import android.support.annotation.LayoutRes;
 import android.support.v7.widget.RecyclerView;
 import android.text.Spannable;
 import android.text.method.LinkMovementMethod;
+import android.util.Log;
 import android.util.SparseArray;
 import android.util.TypedValue;
 import android.view.MotionEvent;
@@ -135,6 +136,8 @@ public class MessagesListAdapter<MESSAGE extends IMessage>
             loadMoreListener.onLoadMore(page, total);
         }
     }
+
+
 
     /*
     * PUBLIC METHODS
@@ -920,5 +923,9 @@ public class MessagesListAdapter<MESSAGE extends IMessage>
         public OutcomingMessageViewHolder(View itemView) {
             super(itemView);
         }
+    }
+
+    public void setScroll(boolean scroll) {
+        this.scroll = scroll;
     }
 }

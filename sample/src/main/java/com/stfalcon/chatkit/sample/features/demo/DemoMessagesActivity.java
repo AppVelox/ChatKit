@@ -53,7 +53,7 @@ public abstract class DemoMessagesActivity extends AppCompatActivity
     @Override
     protected void onStart() {
         super.onStart();
-        messagesAdapter.addToStart(MessagesFixtures.getTextMessage(), true);
+        messagesAdapter.addToStart(MessagesFixtures.getTextMessage());
     }
 
     @Override

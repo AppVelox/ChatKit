@@ -47,7 +47,7 @@ public class CustomMediaMessagesActivity extends DemoMessagesActivity
     @Override
     public boolean onSubmit(CharSequence input) {
         super.messagesAdapter.addToStart(
-                MessagesFixtures.getTextMessage(input.toString()), true);
+                MessagesFixtures.getTextMessage(input.toString()));
         return true;
     }
 
@@ -73,10 +73,10 @@ public class CustomMediaMessagesActivity extends DemoMessagesActivity
     public void onClick(DialogInterface dialogInterface, int i) {
         switch (i) {
             case 0:
-                messagesAdapter.addToStart(MessagesFixtures.getImageMessage(), true);
+                messagesAdapter.addToStart(MessagesFixtures.getImageMessage());
                 break;
             case 1:
-                messagesAdapter.addToStart(MessagesFixtures.getVoiceMessage(), true);
+                messagesAdapter.addToStart(MessagesFixtures.getVoiceMessage());
                 break;
         }
     }
