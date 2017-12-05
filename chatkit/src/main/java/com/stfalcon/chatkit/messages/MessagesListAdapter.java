@@ -70,7 +70,7 @@ public class MessagesListAdapter<MESSAGE extends IMessage>
     private DateFormatter.Formatter dateHeadersFormatter;
     private SparseArray<OnMessageViewClickListener> viewClickListenersArray = new SparseArray<>();
 
-    private boolean scroll = true;
+    private boolean scroll;
 
     /**
      * For default list item layout and view holder.
@@ -106,12 +106,6 @@ public class MessagesListAdapter<MESSAGE extends IMessage>
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Wrapper wrapper = items.get(position);
-
-        if (position == 0) {
-            scroll = true;
-        } else {
-            scroll = false;
-        }
 
         holders.bind(holder, wrapper.item, wrapper.isSelected, imageLoader,
                 getMessageClickListener(wrapper),
