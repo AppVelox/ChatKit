@@ -20,9 +20,11 @@ android {
     }
 }
 
-subprojects {
-    tasks.withType(debugAndroidJavadocs).all { enabled = false }
-}
+tasks.withType(Javadoc) {
+        options.addStringOption('Xdoclint:none', '-quiet')
+        options.addStringOption('encoding', 'UTF-8')
+        options.addStringOption('charSet', 'UTF-8')
+    }
 
 publish {
     groupId = 'com.github.stfalcon'
