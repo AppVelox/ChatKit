@@ -21,7 +21,7 @@ android {
 }
 
 subprojects {
-    tasks.withType(Javadoc).all { enabled = false }
+    tasks.withType(debugAndroidJavadocs).all { enabled = false }
 }
 
 publish {
