@@ -16,6 +16,7 @@
 
 package com.stfalcon.chatkit.dialogs;
 
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.support.annotation.LayoutRes;
@@ -33,6 +34,7 @@ import com.stfalcon.chatkit.commons.ViewHolder;
 import com.stfalcon.chatkit.commons.models.IDialog;
 import com.stfalcon.chatkit.commons.models.IMessage;
 import com.stfalcon.chatkit.utils.DateFormatter;
+import com.stfalcon.chatkit.view.TextDrawable;
 
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
@@ -463,6 +465,17 @@ public class DialogsListAdapter<DIALOG extends IDialog>
         protected ViewGroup dividerContainer;
         protected View divider;
 
+        private static int color = 0;
+        private final static String[] placeHolderColors = {
+                "#cb4fd8",
+                "#45c7fa",
+                "#b3da77",
+                "#fb0090",
+                "#1e88e5",
+                "#ffc107"
+        };
+
+
         public DialogViewHolder(View itemView) {
             super(itemView);
             root = (ViewGroup) itemView.findViewById(R.id.dialogRootLayout);
@@ -597,12 +610,18 @@ public class DialogsListAdapter<DIALOG extends IDialog>
                     ? getDateString(lastMessageDate)
                     : formattedDate);
 
+            if (dialog.getDialogName() != null && dialog.getDialogName().length() > 0) {
+                TextDrawable textDrawable = TextDrawable.builder().buildRound(String.valueOf(dialog.getDialogName().charAt(0)), Color.parseColor(placeHolderColors[getAdapterPosition()%6]));
+                ivAvatar.setImageDrawable(textDrawable);
+            }
+
             //Set Dialog avatar
             if (imageLoader != null) {
                 imageLoader.loadImage(ivAvatar, dialog.getDialogPhoto());
             }
 
             //Set Last message user avatar
+
             if (imageLoader != null) {
                 imageLoader.loadImage(ivLastMessageUser, dialog.getLastMessage().getUser().getAvatar());
             }
