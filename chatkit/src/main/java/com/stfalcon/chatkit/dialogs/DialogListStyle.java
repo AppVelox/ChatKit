@@ -29,7 +29,7 @@ import com.stfalcon.chatkit.commons.Style;
  */
 @SuppressWarnings("WeakerAccess")
 class DialogListStyle extends Style {
-
+//f
     private int dialogTitleTextColor;
     private int dialogTitleTextSize;
     private int dialogTitleTextStyle;
