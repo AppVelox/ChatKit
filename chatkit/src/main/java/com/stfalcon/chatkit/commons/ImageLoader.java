@@ -18,11 +18,15 @@ package com.stfalcon.chatkit.commons;
 
 import android.widget.ImageView;
 
+import com.stfalcon.chatkit.commons.models.IDialog;
+
 /**
  * Callback for implementing images loading in message list
  */
 public interface ImageLoader {
 
     void loadImage(ImageView imageView, String url);
+
+    void loadImage(ImageView imageView, String url, IDialog dialog, int position);
 
 }

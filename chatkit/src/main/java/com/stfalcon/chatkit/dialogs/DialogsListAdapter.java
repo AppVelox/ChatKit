@@ -610,17 +610,10 @@ public class DialogsListAdapter<DIALOG extends IDialog>
                     ? getDateString(lastMessageDate)
                     : formattedDate);
 
-            if (dialog.getDialogName() != null && dialog.getDialogName().length() > 0) {
-                TextDrawable textDrawable = TextDrawable.builder().buildRound(String.valueOf(dialog.getDialogName().charAt(0)), Color.parseColor(placeHolderColors[getAdapterPosition()%6]));
-                ivAvatar.setImageDrawable(textDrawable);
-            }
-
             //Set Dialog avatar
             if (imageLoader != null) {
-                imageLoader.loadImage(ivAvatar, dialog.getDialogPhoto());
+                imageLoader.loadImage(ivAvatar, dialog.getDialogPhoto(), dialog, getAdapterPosition());
             }
-
-            //Set Last message user avatar
 
 
             ivLastMessageUser.setVisibility(dialogStyle.isDialogMessageAvatarEnabled()
