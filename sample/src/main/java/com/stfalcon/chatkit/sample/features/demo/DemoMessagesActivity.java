@@ -10,6 +10,7 @@ import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
 import com.stfalcon.chatkit.commons.ImageLoader;
+import com.stfalcon.chatkit.commons.models.IDialog;
 import com.stfalcon.chatkit.messages.MessagesListAdapter;
 import com.stfalcon.chatkit.sample.R;
 import com.stfalcon.chatkit.sample.common.data.fixtures.MessagesFixtures;
@@ -46,6 +47,11 @@ public abstract class DemoMessagesActivity extends AppCompatActivity
             @Override
             public void loadImage(ImageView imageView, String url) {
                 Picasso.with(DemoMessagesActivity.this).load(url).into(imageView);
+            }
+
+            @Override
+            public void loadImage(ImageView imageView, String url, IDialog dialog, int position) {
+                
             }
         };
     }
